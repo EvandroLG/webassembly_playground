@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Roll Dice</title>
+    </head>
+    <body>
+        <button type="button" id="roll">
+            Roll
+        </button>
+        <input type="text" id="result">
+
+        <script src="index.js"></script> 
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const button = document.getElementById('roll'); 
+                const result = document.getElementById('result');
+
+                button.addEventListener('click', () => {
+                    result.value = _rolling();  
+                });
+            }, false);
+        </script>
+    </body>
+</html>
