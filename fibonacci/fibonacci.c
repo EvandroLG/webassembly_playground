@@ -10,5 +10,5 @@ int EMSCRIPTEN_KEEPALIVE fibonacci(value) {
         return 1;
     }
 
-    return fibonacci(value - 1) + fibonacci(value - 1);
+    return fibonacci(value - 1) + fibonacci(value - 2);
 }

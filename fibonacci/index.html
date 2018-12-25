@@ -7,11 +7,27 @@
         <title>Fibonacci</title>
     </head>
     <body>
+        <input type="text" id="calculator">
+        <input type="text" id="result">
+
         <script src="index.js"></script> 
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                const fib = Module.cwrap('fibonacci', 'number', ['number']);
-                console.log(fib(16));
+
+                function byId(value) {
+                    return document.getElementById(value);
+                }
+
+                const result = byId('result');
+                byId('calculator').addEventListener('keyup', e => {
+                    if (!e.target.value) {
+                        result.value = '';
+                        return;
+                    }
+
+                    result.value = _fibonacci(e.target.value);
+                }, false);
+
             }, false);
         </script>
     </body>
